@@ -1,27 +1,29 @@
-# AulasModulo
+# Catálogo de aulas por módulo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
+## Ferramentas utilizadas:
+- Node com framework Nestjs para o backend
+- Angular para o frontend
+- Banco de dados relional Postgresql
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Passos para utilizr o projeto na máquina local
 
-## Code scaffolding
+### Iniciar a aplicação em Angular
+#### 1 - Clonar o projeto: git clone https://github.com/santoskarolina/modulo_aulas_angular.git
+#### 2 - Instalar os pacotes necessários: npm i
+#### 3 - subir a aplicação: ng serve
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Iniciar a aplicação em Nestjs
+#### 1 - Clonar o projeto: git clone https://github.com/santoskarolina/modulo_aulas_nestjs.git
+#### 2 - Instalar os pacotes necessários: npm i
+#### 3- criar uma base de dados com nome "aulas_modulo" e um schema com nome "modulo_aulas"
+#### 4 - rodar a migração de criação de primeir usuário: npm run typeorm migration:run
+#### 5 - subir a aplicação: rpm run start:dev
 
-## Build
+    Feito isso, basta acessar http://localhost:4200/ para utilizar a aplicação.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    Para fazer o login com usuário criado na migration, usar as credencias abaixo:
+    # email: usuario@admin.com.br
+    # senha: 123456
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
