@@ -1,0 +1,44 @@
+<mat-sidenav-container class="container">
+  <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" class="mat-sidenav">
+    <mat-list>
+      <mat-nav-list role="list-item">
+
+        <a routerLink="/admin/dashboard" mat-list-item>
+          <i class="material-icons">dashboard</i>
+          Dashboard
+        </a>
+
+        <a routerLink="/admin/modulos" mat-list-item>
+          <i class="material-icons">important_devices</i>
+          Módulos
+        </a>
+
+        <a routerLink= "/admin/aulas" mat-list-item>
+          <i class="material-icons">book</i>
+          Aulas
+        </a>
+
+        <a routerLink="/admin/usuarios" mat-list-item>
+          <i class="material-icons">groups</i>
+          Usuários
+        </a>
+
+        <a mat-list-item (click)="logOut()">
+          <i class="material-icons">logout</i>
+          Sair
+        </a>
+
+      </mat-nav-list>
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="mat-sidenav-content">
+    <button mat-button (click)="snav.toggle()" class="icone-menu">
+      <i class="material-icons">reorder</i>
+    </button>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+

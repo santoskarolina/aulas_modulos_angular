@@ -1,0 +1,37 @@
+mat-toolbar{
+  background-color: rgb(28, 12, 63);
+  height: 80px;
+  width: 100%;
+  padding: 4px 12px;
+
+  display: flex;
+  justify-content: space-evenly;
+
+  color: #ffffff;
+}
+
+.img img{
+  cursor: pointer;
+  width: 190px;
+}
+
+button{
+  border-radius: 20px;
+  width: 100px;
+  font-size: 16px;
+
+  background-color: #00072D;
+
+  color: rgb(59, 212, 45);
+
+  border: 2px solid rgb(59, 212, 45);
+
+  transition: 0.5s ease-in-out;
+
+  font-weight: 400 !important;
+}
+
+button:hover{
+  background-color: rgb(59, 212, 45);
+  color: #ffffff;
+}

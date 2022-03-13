@@ -1,0 +1,38 @@
+<div class="container">
+
+  <div class="actions">
+    <button mat-button (click)="new_user()">Novo usuário</button>
+  </div>
+
+  <table mat-table [dataSource]="usuarios" class="table">
+
+    <ng-container matColumnDef="usuario_id">
+      <th mat-header-cell *matHeaderCellDef class="table-container-th"> ID </th>
+      <td mat-cell *matCellDef="let element" class="table-container-td"> {{element.usuario_id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef class="table-container-th"> MODULO </th>
+      <td mat-cell *matCellDef="let element" class="table-container-td"> {{element.nome}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef class="table-container-th"> NOME </th>
+      <td mat-cell *matCellDef="let element" class="table-container-td"> {{element.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="deletar">
+      <th mat-header-cell *matHeaderCellDef class="table-container-th"> DELETAR </th>
+      <td mat-cell *matCellDef="let element" class="table-container-td">
+        <mat-icon  style="cursor: pointer" (click)="delete(element.usuario_id, element.nome)">delete</mat-icon>
+      </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+
+

@@ -1,0 +1,50 @@
+<div class="container">
+
+  <div class="content">
+
+    <div class="form mat-card" [formGroup]="form">
+
+      <p>{{id_aula == 'novo' ? 'Nova aula' : 'Editar aula' }}</p>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Nome</mat-label>
+        <input
+          matInput
+          placeholder="Programação orientada a objetos"
+          autocomplete="off" formControlName="nome">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+        <mat-error *ngIf="form.controls['nome'].invalid">{{getErrorMessageNome()}}</mat-error>
+
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Modulo</mat-label>
+        <mat-select formControlName="modulo" >
+          <mat-option *ngFor="let modulo of modulos" [value]="modulo">{{modulo.nome}}</mat-option>
+        </mat-select>
+
+        <mat-error *ngIf="form.controls['modulo'].invalid">{{getErrorMessageModulo()}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Data da aula</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="data_aula" autocomplete="off">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+
+        <mat-error *ngIf="form.controls['data_aula'].invalid">{{getErrorMessageData()}}</mat-error>
+      </mat-form-field>
+
+      <div class="actions">
+        <button class="save" mat-button (click)="save()" [disabled]="!form.valid" *ngIf="id_aula == 'novo'">Salvar</button>
+        <button class="save" mat-button (click)="update()" [disabled]="!form.valid" *ngIf="id_aula != 'novo'">Atualizar</button>
+        <button class="cancel" mat-button (click)="cancel()">Cancelar</button>
+        <button class="delete" mat-button (click)="delete()" *ngIf="id_aula != 'novo'">Deletar</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

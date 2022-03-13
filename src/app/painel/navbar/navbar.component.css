@@ -1,0 +1,17 @@
+.container{
+  background-color: #eeee;
+  min-height: 100vh;
+}
+
+i{
+  padding-right: 1.0rem;
+}
+
+
+.mat-sidenav{
+  width: 190px;
+}
+.mat-sidenav-content{
+  margin: 0 0 20px 0;
+  min-height: 100vh;
+}

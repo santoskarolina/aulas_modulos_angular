@@ -1,0 +1,31 @@
+<div class="container">
+
+  <div class="content">
+
+    <div class="form mat-card" [formGroup]="form">
+
+      <p>{{id == 'novo' ? 'Novo modulo' : 'Editar modulo' }}</p>
+
+      <mat-form-field appearance="outline" class="form-field" >
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Programação orientada a objetos"
+               autocomplete="off" formControlName="nome">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+        <mat-error *ngIf="form.controls['nome'].invalid">{{getErrorMessageNome()}}</mat-error>
+
+      </mat-form-field>
+
+      <div class="actions">
+
+        <button class="save" mat-button (click)="saveModule()" [disabled]="!form.valid" *ngIf="id == 'novo'">Salvar</button>
+        <button class="save" mat-button (click)="updateModule()" [disabled]="!form.valid" *ngIf="id != 'novo'">Atualizar</button>
+        <button class="delete" mat-button (click)="cancel()">Cancelar</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

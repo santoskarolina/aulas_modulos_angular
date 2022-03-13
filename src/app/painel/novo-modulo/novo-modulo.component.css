@@ -1,0 +1,46 @@
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content{
+  width: 90%;
+  margin-top: 20px;
+}
+
+.form {
+  width: 100%;
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.form p{
+  font-size: 20px
+}
+
+.form .form-field{
+  width: 100%;
+  font-size: 18px;
+}
+
+.actions{
+  width: 90%;
+}
+
+.actions button{
+  width: 90px;
+  margin: 0 10px;
+}
+
+.actions .save{
+  background-color: rgb(59, 212, 45);
+  color: #FFFFFF;
+}
+
+.actions .delete{
+  background-color: rgb(185, 23, 41);
+  color: #FFFFFF;
+}

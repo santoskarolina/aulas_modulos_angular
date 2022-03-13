@@ -1,0 +1,23 @@
+<div class="container">
+
+  <div class="content">
+
+    <span>Dashboard
+    <mat-icon>dashboard</mat-icon>
+    </span>
+
+    <div class="cards">
+      <mat-card class="card" *ngIf="total_aulas">
+        <mat-card-title class="title">Total de aulas</mat-card-title>
+        <mat-card-subtitle class="subtitle">{{total_aulas.total}}</mat-card-subtitle>
+      </mat-card>
+
+      <mat-card class="card" *ngIf="total_modulo">
+        <mat-card-title class="title">Total de modulos</mat-card-title>
+        <mat-card-subtitle class="subtitle">{{total_modulo.total}}</mat-card-subtitle>
+      </mat-card>
+    </div>
+
+  </div>
+
+</div>

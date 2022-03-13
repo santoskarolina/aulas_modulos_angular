@@ -1,0 +1,37 @@
+<app-header></app-header>
+
+  <div class="container">
+
+    <div class="content">
+
+      <div class="textos">
+        <span>MÓDULOS</span>
+        <h2>{{ modulo.nome }}</h2>
+      </div>
+
+      <div class="programacao">
+
+        <div class="informacoes">
+          <div class="icon">
+            <mat-icon style="margin: 0 2px; font-size: 50px">code</mat-icon>
+          </div>
+          <div class="infos">
+            <h2>Programação</h2>
+            <span>Assista às aulas disponíveis:</span>
+          </div>
+        </div>
+
+        <div class="aulas" *ngFor="let aula of aulas">
+          <mat-card class="aula-content">
+            <img src="https://devaria.com.br/static/media/logo-devaria-02.933327f5.svg">
+            <mat-card-title class="title">{{aula.nome}}</mat-card-title>
+            <mat-card-subtitle class="subtitle">Data da aula: {{aula.data_aula | date: 'dd/MM/yyyy'}}</mat-card-subtitle>
+          </mat-card>
+        </div>
+
+      </div>
+    </div>
+
+</div>
+
+<app-footer></app-footer>

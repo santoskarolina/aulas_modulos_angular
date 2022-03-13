@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<div class="container">
+
+  <div class="content">
+
+    <div class="textos">
+      <span>MÓDULOS</span>
+
+      <h2>Conheça os módulos <br>
+        disponíveis na Devaria</h2>
+
+      <p>Nossos módulos são divididos por temas bem específicos de programação. Aqui, além de verificar o <br>
+        progresso de cada módulo que você está estudando, você pode pesquisar
+        pelos temas que mais te <br> interessam.</p>
+    </div>
+
+    <div class="modulo-container" *ngFor="let modulo of modulos">
+
+      <mat-card class="modulo-content">
+        <mat-icon>code</mat-icon>
+        <span>{{ modulo.nome }}</span>
+        <button mat-button (click)="findClass(modulo.modulo_id)">Saiba mais</button>
+      </mat-card>
+
+    </div>
+
+  </div>
+
+</div>

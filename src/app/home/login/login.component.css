@@ -1,0 +1,108 @@
+.container{
+  background-color: rgb(28, 12, 63);
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.content{
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 90%;
+}
+
+.textos{
+  display: flex;
+  padding: 0 0 0 120px;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+}
+
+.textos img{
+  margin-bottom: 20px;
+}
+
+.textos span{
+  color: rgb(94, 73, 255);
+  font-size: 40px;
+  margin: 6px 0;
+  font-weight: 500;
+  line-height: 1.0;
+  border-bottom: 2px solid rgb(59, 212, 45);
+}
+
+.formulario{
+  border: 1px solid rgb(94, 73, 255);
+  height: 90%;
+  width: 35%;
+  background-color: rgb(24, 10, 53);
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.formulario span{
+  color: #FFFFFF;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.formulario-field{
+  background-color: rgb(17, 6, 41);
+  /*background-color: #FFFFFF;*/
+  color: #FFFFFF;
+
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 20px;
+  padding: 2px 10px;
+}
+
+.formulario-field input{
+  height: 20px;
+  margin: 0;
+  color: black;
+  border: 1px white;
+  /*background-color: rgb(17, 6, 41);*/
+  background-color: #FFFFFF;
+}
+
+.formulario button{
+  width: 100%;
+  border-radius: 20px;
+  height: 60px;
+
+  margin-top: 20px;
+  background-color: rgb(59, 212, 45);
+
+  font-size: 20px;
+}
+
+.formulario input{
+  width: 90%;
+  height: 50px;
+  margin: 8px 0;
+
+  font-size: 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(17, 6, 41);
+  color: #FFFFFF;
+
+  padding: 2px 19px;
+}
+
+.error-field{
+  color: #FFFFFF;
+  font-size: 20px;
+}

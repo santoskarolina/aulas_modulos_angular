@@ -1,0 +1,24 @@
+<div class="container">
+
+  <div class="content">
+
+    <div class="textos">
+      <img src="https://devaria.com.br/static/media/logo-devaria-02.933327f5.svg">
+      <span>Faça <br> seu login</span>
+    </div>
+
+    <form class="formulario" [formGroup]="form">
+
+      <span>Painel de administrador</span>
+
+      <p class="error-field">{{emailOuSenhaIncorretos}}</p>
+
+      <input placeholder="Email" required formControlName="email">
+      <input placeholder="Senha" required type="password" formControlName="senha">
+
+      <button mat-button (click)="login()" (keyup.enter)="login()" type="submit">Entrar</button>
+    </form>
+
+  </div>
+
+</div>

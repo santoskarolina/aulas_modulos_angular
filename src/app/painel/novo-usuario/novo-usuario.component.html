@@ -1,0 +1,49 @@
+<div class="container">
+
+  <div class="content">
+
+    <div class="form mat-card" [formGroup]="form">
+
+      <p>Novo usuário</p>
+
+      <mat-form-field appearance="outline" class="form-field" >
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="obi-wan kenobi"
+               autocomplete="off" formControlName="nome">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+        <mat-error *ngIf="form.controls['nome'].invalid">{{getErrorMessageNome()}}</mat-error>
+
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field" >
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="obi-wan_kenobi@email.com"
+               autocomplete="off" formControlName="email">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+        <mat-error *ngIf="form.controls['email'].invalid">{{getErrorMessageEmail()}}</mat-error>
+
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Senha</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="senha">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+
+        <mat-error *ngIf="form.controls['senha'].invalid">{{getErrorMessageSenha()}}</mat-error>
+      </mat-form-field>
+
+      <div class="actions">
+        <button class="save" mat-button (click)="createUser()" [disabled]="!form.valid" >Salvar</button>
+        <button class="delete" mat-button (click)="cancel()">Cancelar</button>
+      </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
