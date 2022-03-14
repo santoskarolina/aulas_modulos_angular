@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Aulas} from "../../modulos/models/modulos.model";
 import {ActivatedRoute, Route, Router} from "@angular/router";
+import {NgxSpinnerService} from "ngx-spinner";
+import {AulasService} from "../aulas.service";
+import {finalize} from "rxjs";
 
 @Component({
   selector: 'app-lista-de-aulas',
@@ -15,10 +18,22 @@ export class ListaDeAulasComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private spinner: NgxSpinnerService,
+    private aulaService: AulasService
   ) { }
 
   ngOnInit(): void {
+    this.findAulas()
+  }
+
+  findAulas(){
+    this.spinner.show()
+      this.aulaService.find().pipe(
+        finalize(() =>  this.spinner.hide())
+      ).subscribe(response => {
+        this.aulas = response
+      })
   }
 
   nova_aula(){

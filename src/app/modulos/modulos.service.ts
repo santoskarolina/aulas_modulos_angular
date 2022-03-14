@@ -8,7 +8,7 @@ import {Aulas, ModulosModel} from "./models/modulos.model";
 })
 export class ModulosService {
 
-  baseurl: string = 'http://localhost:3000'
+  baseurl: string = 'https://aulas-modulos-nestjs.herokuapp.com'
 
   constructor(private http: HttpClient) { }
 

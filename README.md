@@ -6,7 +6,7 @@
 - Banco de dados relional Postgresql
 
 
-## Passos para utilizr o projeto na máquina local
+## Passos para utilizar o projeto na máquina local
 
 ### Iniciar a aplicação em Angular
 #### 1 - Clonar o projeto: git clone https://github.com/santoskarolina/modulo_aulas_angular.git

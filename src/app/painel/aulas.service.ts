@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Aulas, ModulosModel} from "../modulos/models/modulos.model";
+import {environment} from "../../environments/environment.prod";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AulasService {
 
-  baseurl: string = 'http://localhost:3000'
+  baseurl: string = environment.baseUrl
 
   constructor(private http: HttpClient) { }
 

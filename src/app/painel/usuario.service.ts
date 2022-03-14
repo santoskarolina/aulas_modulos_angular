@@ -4,14 +4,15 @@ import {Observable} from "rxjs";
 import { JwtHelperService } from '@auth0/angular-jwt'
 import {Router} from "@angular/router";
 import {Usuario} from "../modulos/models/modulos.model";
+import {environment} from "../../environments/environment.prod";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
 
-  baseUrl: string = 'http://localhost:3000/auth/login'
-  baseUrl2: string = 'http://localhost:3000/usuario'
+  baseUrl: string = environment.baseUrl + '/auth/login'
+  baseUrl2: string = environment.baseUrl
 
   jwtHelperService: JwtHelperService = new JwtHelperService()
 
@@ -26,17 +27,17 @@ export class UsuarioService {
   }
 
   find(): Observable<Usuario[]> {
-    const url = `${this.baseUrl2}`
+    const url = `${this.baseUrl2}/usuario`
     return  this.http.get<Usuario[]>(url)
   }
 
   create(usuario: Usuario): Observable<Usuario> {
-    const url = `${this.baseUrl2}`
+    const url = `${this.baseUrl2}/usuario`
     return  this.http.post<Usuario>(url, usuario)
   }
 
   delete(id: number): Observable<void> {
-    const url = `${this.baseUrl2}/${id}`
+    const url = `${this.baseUrl2}/usuario/${id}`
     return this.http.delete<void>(url)
   }
 
