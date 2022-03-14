@@ -11,8 +11,7 @@ import {environment} from "../../environments/environment.prod";
 })
 export class UsuarioService {
 
-  baseUrl: string = environment.baseUrl + '/auth/login'
-  baseUrl2: string = environment.baseUrl
+  baseUrl: string = environment.baseUrl
 
   jwtHelperService: JwtHelperService = new JwtHelperService()
 
@@ -22,22 +21,22 @@ export class UsuarioService {
     const parametros = new HttpParams()
       .set('email', email)
       .set('senha', senha)
-    const url = `${this.baseUrl}`
+    const url = `${this.baseUrl}/auth/login`
     return this.http.post<any>(url, parametros)
   }
 
   find(): Observable<Usuario[]> {
-    const url = `${this.baseUrl2}/usuario`
+    const url = `${this.baseUrl}/usuario`
     return  this.http.get<Usuario[]>(url)
   }
 
   create(usuario: Usuario): Observable<Usuario> {
-    const url = `${this.baseUrl2}/usuario`
+    const url = `${this.baseUrl}/usuario`
     return  this.http.post<Usuario>(url, usuario)
   }
 
   delete(id: number): Observable<void> {
-    const url = `${this.baseUrl2}/usuario/${id}`
+    const url = `${this.baseUrl}/usuario/${id}`
     return this.http.delete<void>(url)
   }
 
